@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Version Launcher</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;    /* center vertically */
+    }
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+    button {
+      background-color: #555;
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button onclick="window.location.href='client.html'">Indev</button>
+    <button onclick="window.location.href='client2.html'">Alpha 1.0</button>
+    <button onclick="window.location.href='client3.html'">Beta 1.7.3</button>
+  </div>
+</body>
+</html>
