@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Version Launcher</title>
+  <title>Eaglercraft Launcher</title>
   <style>
     html, body {
       height: 100%;
@@ -13,6 +13,16 @@
       display: flex;
       justify-content: center; /* center horizontally */
       align-items: center;    /* center vertically */
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo {
+      max-width: 100%;
+      height: auto;
     }
     .button-container {
       display: flex;
@@ -35,10 +45,13 @@
   </style>
 </head>
 <body>
-  <div class="button-container">
-    <button onclick="window.location.href='client.html'">Indev</button>
-    <button onclick="window.location.href='client2.html'">Alpha 1.0</button>
-    <button onclick="window.location.href='client3.html'">Beta 1.7.3</button>
+  <div class="content">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <div class="button-container">
+      <button onclick="window.location.href='client.html'">Indev</button>
+      <button onclick="window.location.href='client2.html'">Alpha 1.0</button>
+      <button onclick="window.location.href='client3.html'">Beta 1.7.3</button>
+    </div>
   </div>
 </body>
 </html>
