@@ -5,6 +5,30 @@
   <meta charset="UTF-8" />
   <title>Eaglercraft Launcher</title>
   <style>
+    /* Loading screen styles */
+    #loading-screen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #222;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      z-index: 9999;
+    }
+    #loading-screen p {
+      color: white;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    /* Hide main content initially */
+    #main-content {
+      display: none;
+    }
+
+    /* Your existing styles */
     html, body {
       height: 100%;
       margin: 0;
@@ -29,6 +53,8 @@
     .button-container {
       display: flex;
       gap: 20px;
+      flex-wrap: wrap; /* wrap buttons if window is narrow */
+      justify-content: center;
     }
     button {
       background-color: #555;
@@ -47,16 +73,32 @@
   </style>
 </head>
 <body>
-  <div class="content">
-    <img src="imag/logo.png" alt="Logo" class="logo" />
-    <div class="button-container">
-      <button onclick="window.location.href='client.html'">Indev</button>
-      <button onclick="window.location.href='client2.html'">Alpha 1.0</button>
-      <button onclick="window.location.href='client3.html'">Beta 1.7.3</button>
-      <button onclick="window.location.href='client1.html'">Release 1.5.2</button>
-      <button onclick="window.location.href='client4.html'">Release 1.8.8</button>
-      <button onclick="window.location.href='client5.html'">Release 1.12.2</button>
+  <!-- Loading screen -->
+  <div id="loading-screen">
+    <img src="imag/loading.gif" alt="Loading..." width="100" height="100" />
+    <p>Loading...</p>
+  </div>
+
+  <!-- Main content hidden initially -->
+  <div id="main-content">
+    <div class="content">
+      <img src="imag/logo.png" alt="Logo" class="logo" />
+      <div class="button-container">
+        <button onclick="window.location.href='client.html'">Indev</button>
+        <button onclick="window.location.href='client2.html'">Alpha 1.0</button>
+        <button onclick="window.location.href='client3.html'">Beta 1.7.3</button>
+        <button onclick="window.location.href='client1.html'">Release 1.5.2</button>
+        <button onclick="window.location.href='client4.html'">Release 1.8.8</button>
+        <button onclick="window.location.href='client5.html'">Release 1.12.2</button>
+      </div>
     </div>
   </div>
+
+  <script>
+    window.onload = function() {
+      document.getElementById('loading-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    };
+  </script>
 </body>
 </html>
